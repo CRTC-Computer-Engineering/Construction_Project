@@ -1,3 +1,7 @@
+import wx
+
+print ("chemai")
+
 """
 cost for all materials ( THAT ARE CONSTANTS )
 """
