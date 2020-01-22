@@ -1,6 +1,6 @@
 import wx
 
-print ("chemai")
+print ("dumb")
 
 """
 cost for all materials ( THAT ARE CONSTANTS )
