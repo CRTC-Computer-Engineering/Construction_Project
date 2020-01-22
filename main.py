@@ -1,7 +1,28 @@
 import wx
 
-print ("dumb")
-print ('I am also dumb')
+class MyFrame(wx.Frame):    
+    def __init__(self):
+        super().__init__(parent=None, title='Construction Calculator')
+        self.Show()
+
+        panel = wx.Panel(self)
+        self.text_ctrl = wx.TextCtrl(panel, pos=(5, 5))
+        my_btn = wx.Button(panel, label='Press Me', pos=(5, 55))
+        my_btn.Bind(wx.EVT_BUTTON, self.on_press)
+        self.Show()
+
+    def on_press(self, event):
+        value = self.text_ctrl.GetValue()
+        if not value:
+            print("You didn't enter anything!")
+        else:
+            print(f'You typed: "{value}"')
+
+
+if __name__ == '__main__':
+    app = wx.App()
+    frame = MyFrame()
+    app.MainLoop()
 
 """
 cost for all materials ( THAT ARE CONSTANTS )
@@ -19,7 +40,7 @@ length = int(input("What's length of your house?: "))
 width = int(input("What's width of your house?: "))
 height = 8
 
-# convertion to inchs 
+# conversion
 length = (length*12)
 width = (width*12)
 height = (height*12)
