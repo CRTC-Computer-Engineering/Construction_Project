@@ -1,17 +1,16 @@
 import wx
 
-print ("dumb")
-print ('I am also dumb')
-
-"""
 cost for all materials ( THAT ARE CONSTANTS )
-"""
-price_concrete = 150 
-price_joist = 24.07
-price_studs = 2.72
+class MyFrame(wx.Frame):    
+    def __init__(self):
+        super().__init__(parent=None, title='Construction Interface')
+        panel = wx.Panel(self)        
+        
 
-
-
+if __name__ == '__main__':
+    app = wx.App()
+    frame = MyFrame()
+    app.MainLoop()
 """
 Part one- Chemai
 """
