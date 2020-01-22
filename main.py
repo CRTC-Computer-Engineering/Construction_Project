@@ -1,6 +1,5 @@
 import wx
 
-cost for all materials ( THAT ARE CONSTANTS )
 class MyFrame(wx.Frame):    
     def __init__(self):
         super().__init__(parent=None, title='Construction Interface')
