@@ -1,6 +1,7 @@
 import wx
 
-print ("chemai")
+print ("dumb")
+print ('I am also dumb')
 
 """
 cost for all materials ( THAT ARE CONSTANTS )
