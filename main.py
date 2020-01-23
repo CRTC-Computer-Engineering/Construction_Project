@@ -3,11 +3,13 @@ import wx
 class MyFrame(wx.Frame):    
     def __init__(self):
         super().__init__(parent=None, title='Construction Calculator')
-        self.Show()
 
         panel = wx.Panel(self)
-        self.text_ctrl = wx.TextCtrl(panel, pos=(5, 5))
-        my_btn = wx.Button(panel, label='Press Me', pos=(5, 55))
+        wx.StaticText(panel, id=-1, label="Length?", pos=(5, 10), size=(50, 15), style=wx.ALIGN_LEFT, name="test")
+        wx.StaticText(panel, id=-1, label="Width?", pos=(150, 10), size=(50, 15), style=wx.ALIGN_LEFT, name="test")
+        self.text_ctrl = wx.TextCtrl(panel, pos=(5, 30))
+        self.text_ctrl2 = wx.TextCtrl(panel, pos=(150,30))
+        my_btn = wx.Button(panel, label='Press Me', pos=(5, 100))
         my_btn.Bind(wx.EVT_BUTTON, self.on_press)
         self.Show()
 
@@ -17,7 +19,6 @@ class MyFrame(wx.Frame):
             print("You didn't enter anything!")
         else:
             print(f'You typed: "{value}"')
-
 
 if __name__ == '__main__':
     app = wx.App()
@@ -30,7 +31,6 @@ cost for all materials ( THAT ARE CONSTANTS )
 price_concrete = 150 
 price_joist = 24.07
 price_studs = 2.72
-
 
 
 """
