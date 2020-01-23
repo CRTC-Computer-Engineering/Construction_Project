@@ -1,12 +1,13 @@
 import wx
 class MyFrame(wx.Frame):    
     def __init__(self):
-        super().__init__(parent=None, title='Construction Wizard') # Overides the default window value.
+        super().__init__(parent=None, title='Construction Wizard', size=(400, 320)) # Overides the default window value.
         panel = wx.Panel(self) # Make self an instance of pannel
 
-        self.first_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 40)) # Init
-        self.second_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 80)) # Init
-        self.my_btn = wx.Button(panel, label='Enter', pos=(20, 150))# Init
+        self.first_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 20)) # Init
+        self.second_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 60)) # Init
+        self.report = wx.text_ctrl = wx.TextCtrl(panel, pos=(150, 20), size=(200,250)) # Init
+        self.my_btn = wx.Button(panel, label='Enter', pos=(20, 130))# Init
         self.my_btn.Bind(wx.EVT_BUTTON, self.get_box_value) # Method
 
         self.Show() # Runs the Show method, defined in line 5
@@ -14,7 +15,7 @@ class MyFrame(wx.Frame):
     def get_box_value(self, event): # Pass the current instance (the name) and the event (what happened)
         print(self.first_box.GetValue()) # Runs whatever is found inside of the first box
         print(self.second_box.GetValue()) # Runs whatever is found inside of the second box
-
+class
 if __name__ == '__main__':
     app = wx.App()
     frame = MyFrame()
@@ -48,8 +49,13 @@ price_studs = 2.72
 """
 Part one- Chemai
 """
+"""
 length = int(input("What's length of your house?: "))
 width = int(input("What's width of your house?: "))
+height = 8
+"""
+length = first_box
+width =  second_box
 height = 8
 
 # convertion to inchs 
