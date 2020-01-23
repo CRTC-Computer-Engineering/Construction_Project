@@ -1,7 +1,40 @@
 import wx
+class MyFrame(wx.Frame):    
+    def __init__(self):
+        super().__init__(parent=None, title='Construction Wizard') # Overides the default window value.
+        panel = wx.Panel(self) # Make self an instance of pannel
 
-print ("dumb")
-print ('I am also dumb')
+        self.first_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 40)) # Init
+        self.second_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 80)) # Init
+        self.my_btn = wx.Button(panel, label='Enter', pos=(20, 150))# Init
+        self.my_btn.Bind(wx.EVT_BUTTON, self.get_box_value) # Method
+
+        self.Show() # Runs the Show method, defined in line 5
+
+    def get_box_value(self, event): # Pass the current instance (the name) and the event (what happened)
+        print(self.first_box.GetValue()) # Runs whatever is found inside of the first box
+        print(self.second_box.GetValue()) # Runs whatever is found inside of the second box
+
+if __name__ == '__main__':
+    app = wx.App()
+    frame = MyFrame()
+    app.MainLoop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#########################################################
 
 """
 cost for all materials ( THAT ARE CONSTANTS )
