@@ -4,9 +4,16 @@ class MyFrame(wx.Frame):
         super().__init__(parent=None, title='Construction Wizard', size=(400, 320)) # Overides the default window value.
         panel = wx.Panel(self) # Make self an instance of pannel
 
-        self.first_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 20)) # Init
-        self.second_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 60)) # Init
-        self.report = wx.text_ctrl = wx.TextCtrl(panel, pos=(150, 20), size=(200,250)) # Init
+        #First question    
+        wx.StaticText(panel, id=-1, label = "What's length of your house?", pos =(5, 20), style = 3, name = "test")
+        
+        #Second question
+        wx.StaticText(panel, id=-1, label = "What's width of your house?", pos =(5, 80), style = 3, name = "test")
+
+        # Box's
+        self.first_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 40)) # Init
+        self.second_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 100)) # Init
+        self.report = wx.text_ctrl = wx.TextCtrl(panel, pos=(170, 20), size=(200,250)) # Init
         self.my_btn = wx.Button(panel, label='Enter', pos=(20, 130))# Init
         self.my_btn.Bind(wx.EVT_BUTTON, self.calc_all) # Method
 
@@ -119,23 +126,26 @@ class MyFrame(wx.Frame):
 
         #PRINTS PRINTS PRINTS
         #CHEMAI PRINTS
-        print (" ")
-        print ("The perimeter of your house is: " + str(perimeter) + (" ."))
-        print ("The Volume of the wall is: " + str(Volume) + (" Cubic yard."))
-        print ("The Volume of the footer is: " + str(footer_Volume) + (" Cubic yard."))
-        print ("The Volume of a concrete floor for your basement is: " + str(floor_Volume) + (" Cubic yards."))
-        print (" ")
-        print ("Total Cost of concrete: " + str(Total_cost_concrete)+ "$"  )
-        #SASHA PRINTS
-        print ("The total number of joists needed is " + str(number_of_joists))
-        print ("Total cost of joists: " + str(cost_joist) + "$")
-        #KEEGAN PRINTS
-        print("\nNumber of studs: " + str(studs)) #Prints studs
+        def state():
+            print (" ")
+            print ("The perimeter of your house is: " + str(perimeter) + (" ."))
+            print ("The Volume of the wall is: " + str(Volume) + (" Cubic yard."))
+            print ("The Volume of the footer is: " + str(footer_Volume) + (" Cubic yard."))
+            print ("The Volume of a concrete floor for your basement is: " + str(floor_Volume) + (" Cubic yards."))
+            print (" ")
+            print ("Total Cost of concrete: " + str(Total_cost_concrete)+ "$"  )
+            #SASHA PRINTS
+            print ("The total number of joists needed is " + str(number_of_joists))
+            print ("Total cost of joists: " + str(cost_joist) + "$")
+            #KEEGAN PRINTS
+            print("\nNumber of studs: " + str(studs)) #Prints studs
 
-        print("Total cost of studs: $" + str(cost_studs))#Prints costs
+            print("Total cost of studs: $" + str(cost_studs))#Prints costs
 
-        cost_of_everything = cost_joist + cost_studs + Total_cost_concrete
-        print("\n\nTotal cost altogether: " + str(cost_of_everything) + "$!")
+            cost_of_everything = cost_joist + cost_studs + Total_cost_concrete
+            print("\n\nTotal cost altogether: " + str(cost_of_everything) + "$!")
+
+        wx.StaticText(self, id=-1, label = str(state()), pos =(5, 20), style = 3, name = "test")
 
 
 if __name__ == '__main__':
