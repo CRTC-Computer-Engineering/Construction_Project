@@ -2,10 +2,24 @@ import wx
 
 class MyFrame(wx.Frame):    
     def __init__(self):
-        super().__init__(parent=None, title='Construction Interface')
-        panel = wx.Panel(self)        
-        
+        super().__init__(parent=None, title='Construction Calculator')
 
+        #First question    
+        panel = wx.Panel(self)
+        wx.StaticText(panel, id=-1, label = "What's length of your house?", pos =(5, 10), style = 3, name = "test")
+        self.text_ctrl = wx.TextCtrl(panel, pos=(5, 35))
+        my_btn = wx.Button(panel, label='Press', pos=(5, 65))
+
+        #Second question
+        wx.StaticText(panel, id=-1, label = "What's width of your house?", pos =(5, 100), style = 3, name = "test")
+        self.text_ctrl = wx.TextCtrl(panel, pos=(5, 120))
+        my_btn = wx.Button(panel, label='Press', pos=(5, 150))
+        self.Show()
+
+        #Perimeter of your house:
+        wx.StaticText(panel, id=-1, label = "Your perimeter is: ", pos =(5, 180), style = 3, name = "test")
+        
+        self.Show()
 if __name__ == '__main__':
     app = wx.App()
     frame = MyFrame()
