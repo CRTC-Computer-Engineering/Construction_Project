@@ -123,29 +123,31 @@ class MyFrame(wx.Frame):
 
         cost_studs = studs * 2.72 #Calculates cost
         cost_studs = round(cost_studs, 2)
+        cost_of_everything = cost_joist + cost_studs + Total_cost_concrete
 
         #PRINTS PRINTS PRINTS
-        #CHEMAI PRINTS
+        #CHEMAI PRINTS 
         def state():
-            print (" ")
-            print ("The perimeter of your house is: " + str(perimeter) + (" ."))
-            print ("The Volume of the wall is: " + str(Volume) + (" Cubic yard."))
-            print ("The Volume of the footer is: " + str(footer_Volume) + (" Cubic yard."))
-            print ("The Volume of a concrete floor for your basement is: " + str(floor_Volume) + (" Cubic yards."))
-            print (" ")
-            print ("Total Cost of concrete: " + str(Total_cost_concrete)+ "$"  )
-            #SASHA PRINTS
-            print ("The total number of joists needed is " + str(number_of_joists))
-            print ("Total cost of joists: " + str(cost_joist) + "$")
-            #KEEGAN PRINTS
-            print("\nNumber of studs: " + str(studs)) #Prints studs
+            return """
+            The perimeter of your house is: """ + str(perimeter) + """
+            The Volume of the wall is: """ + str(Volume) + (" Cubic yard.")+"""
+            The Volume of the footer is:""" + str(footer_Volume) + (" Cubic yard.")+"""\n
+            The Volume of a concrete floor for your basement is:""" + str(floor_Volume) + (" Cubic yards.")+"""\n
+            
+            Total Cost of concrete: """ + str(Total_cost_concrete)+ "$" +"""\n
+            
+            The total number of joists needed is """ + str(number_of_joists)+"""\n
+            Total cost of joists: """ + str(cost_joist) + "$"+"""\n
+          
+            Number of studs: """ + str(studs)+ """\n
 
-            print("Total cost of studs: $" + str(cost_studs))#Prints costs
+            Total cost of studs: $""" + str(cost_studs)+"""\n
 
-            cost_of_everything = cost_joist + cost_studs + Total_cost_concrete
-            print("\n\nTotal cost altogether: " + str(cost_of_everything) + "$!")
+            
+            Total cost : """ + str(cost_of_everything) + "$!"
+            
 
-        wx.StaticText(self, id=-1, label = str(state()), pos =(5, 20), style = 3, name = "test")
+        self.report.SetValue(state())
 
 
 if __name__ == '__main__':
