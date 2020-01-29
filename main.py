@@ -1,19 +1,19 @@
 import wx
 class MyFrame(wx.Frame):    
     def __init__(self):
-        super().__init__(parent=None, title='Construction Wizard', size=(400, 320)) # Overides the default window value.
+        super().__init__(parent=None, title='Construction Wizard', size=(587, 340)) # Overides the default window value.
         panel = wx.Panel(self) # Make self an instance of pannel
 
         #First question    
-        wx.StaticText(panel, id=-1, label = "What's length of your house?", pos =(5, 20), style = 3, name = "test")
+        wx.StaticText(panel, id=-1, label = "What is the length of your house?", pos =(5, 20), style = 3, name = "test")
         
         #Second question
-        wx.StaticText(panel, id=-1, label = "What's width of your house?", pos =(5, 80), style = 3, name = "test")
+        wx.StaticText(panel, id=-1, label = "What is the width of your house?", pos =(5, 80), style = 3, name = "test")
 
         # Box's
         self.first_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 40)) # Init
         self.second_box = wx.text_ctrl = wx.TextCtrl(panel, pos=(20, 100)) # Init
-        self.report = wx.text_ctrl = wx.TextCtrl(panel, pos=(170, 20), size=(200,250)) # Init
+        self.report = wx.text_ctrl = wx.TextCtrl(panel, pos=(190, 20), size=(370,250), style = wx.TE_MULTILINE) # Init
         self.my_btn = wx.Button(panel, label='Enter', pos=(20, 130))# Init
         self.my_btn.Bind(wx.EVT_BUTTON, self.calc_all) # Method
 
@@ -128,23 +128,26 @@ class MyFrame(wx.Frame):
         #PRINTS PRINTS PRINTS
         #CHEMAI PRINTS 
         def state():
-            return """
-            The perimeter of your house is: """ + str(perimeter) + """
-            The Volume of the wall is: """ + str(Volume) + (" Cubic yard.")+"""
-            The Volume of the footer is:""" + str(footer_Volume) + (" Cubic yard.")+"""\n
-            The Volume of a concrete floor for your basement is:""" + str(floor_Volume) + (" Cubic yards.")+"""\n
+            return """The perimeter of your house is: """ + str(perimeter) + (" Feet.")+"""
+
+The volume of the wall is: """ + str(Volume) + (" Cubic yards.")+"""
+
+The volume of the footer is: """ + str(footer_Volume) + (" Cubic yards.")+"""
+
+The volume of a concrete basement floor is: """ + str(floor_Volume) + (" Cubic yards.")+"""
             
-            Total Cost of concrete: """ + str(Total_cost_concrete)+ "$" +"""\n
+Total cost of concrete: $""" + str(Total_cost_concrete)+"""
             
-            The total number of joists needed is """ + str(number_of_joists)+"""\n
-            Total cost of joists: """ + str(cost_joist) + "$"+"""\n
+The total number of joists needed is: """ + str(number_of_joists)+"""
+
+Total cost of joists: $""" + str(cost_joist)+"""
           
-            Number of studs: """ + str(studs)+ """\n
+Number of studs: """ + str(studs)+ """
 
-            Total cost of studs: $""" + str(cost_studs)+"""\n
+Total cost of studs: $""" + str(cost_studs)+"""
 
             
-            Total cost : """ + str(cost_of_everything) + "$!"
+Total cost all together: $""" + str(cost_of_everything)
             
 
         self.report.SetValue(state())
@@ -154,18 +157,5 @@ if __name__ == '__main__':
     app = wx.App()
     frame = MyFrame()
     app.MainLoop()
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
